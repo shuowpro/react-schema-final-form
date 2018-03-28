@@ -48,6 +48,7 @@
     "react-dom": "^16.2.0",
     "react-final-form": "^3.1.5",
     "react-final-form-arrays": "^1.0.4",
+    "rimraf": "^2.6.2",
     "rollup": "0.52.0",
     "rollup-plugin-babel": "3.0.2",
     "rollup-plugin-commonjs": "8.2.6",
@@ -58,12 +59,16 @@
     "rollup-watch": "4.3.1"
   },
   "scripts": {
+    "prebuild": "rimraf build",
     "build": "rollup -c config/prod.js",
+    "prebuild:dev": "rimraf build",
     "build:dev": "rollup -c config/dev.js -w",
     "test": "npm run build:dev",
     "version": "npm run build && git add -A .",
     "postversion": "git push --tags origin HEAD",
-    "release": "np --no-publish"
+    "prepublish": "npm run build",
+    "release": "np --no-publish",
+    "postrelease": "npm publish build"
   },
   "peerDependencies": {
     "ajv": "^6.3.0",
