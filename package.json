@@ -15,7 +15,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yamafaktory/babel-react-rollup-starter"
+    "url": "https://github.com/leuction/react-schema-final-form"
   },
   "engines": {
     "npm": ">=3.0.0",
@@ -43,6 +43,7 @@
     "final-form": "^4.4.0",
     "final-form-arrays": "^1.0.4",
     "jest": "^22.4.2",
+    "np": "^2.20.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-final-form": "^3.1.5",
@@ -61,7 +62,8 @@
     "build:dev": "rollup -c config/dev.js -w",
     "test": "npm run build:dev",
     "version": "npm run build && git add -A .",
-    "postversion": "git push --tags origin HEAD"
+    "postversion": "git push --tags origin HEAD",
+    "release": "np --no-publish"
   },
   "peerDependencies": {
     "ajv": "^6.3.0",
