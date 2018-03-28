@@ -1,6 +1,6 @@
 {
   "name": "react-schema-final-form",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "title": "react-schema-final-form",
   "description": "A simple library to build a form based on react-final-form and JSON Schema.",
   "keywords": [
@@ -63,11 +63,9 @@
     "build": "rollup -c config/prod.js",
     "prebuild:dev": "rimraf build",
     "build:dev": "rollup -c config/dev.js -w",
-    "test": "npm run build:dev",
-    "version": "npm run build && git add -A .",
-    "postversion": "git push --tags origin HEAD",
-    "prepublish": "npm run build",
+    "test": "jest",
     "release": "np --no-publish",
+    "prepublish": "npm run build",
     "postrelease": "npm publish build"
   },
   "peerDependencies": {
