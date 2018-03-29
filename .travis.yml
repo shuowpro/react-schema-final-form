@@ -1,9 +1,14 @@
 language: node_js
-
 node_js:
-  - 6
-
+- 9
 script:
-  - npm run build
-
+- npm run build
 sudo: false
+deploy:
+  provider: npm
+  email: leuction@gmail.com
+  api_key:
+    secure: TsthbMuEKu3irGtvItbrA18ASDPTSlDZvj9I27oRbZl42wr1v21HdmgeCfX0PlzJsd2RrDLD1uzxerIPNp7731+mipquKASh8jqRh6q9ISQN9Flszg9rYRcxFB8a3rAoLYut6cbrD1WsBNUsxykObmbFEXUwFO4NR2J0ZYVAqfDXG6HE6YD5wQMhOAT61+3HlcFXL66cd1Z6Fbxkfiz7GpqRIL9y7Xfoh1MzYeV7okwh7F7GzJCfZuCMctpiljMWeqqBdPfVoJVgEYwMa5wvj2DvPRKjHphr465UszVgAGHqYi7zEEARdfWL54nG56sXzZTHbpOhRtp9vPX+u7WKTFGsangDpW48gG6usz2SQfpQzrCw7ifwuVbJfZcyxn6jECHiHJKc+Wl3sgg0UVn7BEY+yYzesoDkiMwGXlfJzUIRrzHGNxZpdVGPo/d6CWRxngnFFtF7+GqIFDRCkuS0+kShmBvzTNDGd0X0rBDclN701S8K4zSIRa8orJISIuC0x9Nk1LH1Jg4OVb/9dR7GZYi4jiv0HB5cTz2vPD+U9RstcrP+wXYjr7dapiJ1lqy0bqIV1O5sEDA4ToRpEOesuYL8rgDjj0Varw7IFJ0ezNMtavtUykkyqVF8YPAOYP1WafijdMZVqmw4Z7LTKDYFvY/7sFJhUR1SwxFfZyxDw58=
+  on:
+    tags: true
+    repo: leuction/react-schema-final-form
