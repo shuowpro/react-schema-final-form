@@ -1,7 +1,7 @@
 {
   "name": "react-schema-final-form",
   "main": "./lib/index.js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "title": "react-schema-final-form",
   "description": "A simple library to build a form based on react-final-form and JSON Schema.",
   "keywords": [
@@ -28,6 +28,7 @@
   "devDependencies": {
     "babel-core": "6.26.0",
     "babel-eslint": "^7.2.3",
+    "babel-jest": "^22.4.3",
     "babel-plugin-external-helpers": "6.18.0",
     "babel-plugin-lodash": "^3.3.2",
     "babel-preset-es2015": "6.24.1",
@@ -74,5 +75,6 @@
     "react-dom": "^16.0.0",
     "react-final-form": "^3.1.5",
     "react-final-form-arrays": "^1.0.4"
-  }
+  },
+  "jest": {}
 }
