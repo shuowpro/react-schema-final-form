@@ -1,6 +1,6 @@
 {
   "name": "react-schema-final-form",
-  "main": "./build/index.js",
+  "main": "./lib/index.js",
   "version": "0.0.3",
   "title": "react-schema-final-form",
   "description": "A simple library to build a form based on react-final-form and JSON Schema.",
@@ -60,9 +60,9 @@
     "rollup-watch": "4.3.1"
   },
   "scripts": {
-    "prebuild": "rimraf build",
+    "prebuild": "rimraf lib",
     "build": "rollup -c config/prod.js",
-    "prebuild:dev": "rimraf build",
+    "prebuild:dev": "rimraf lib",
     "build:dev": "rollup -c config/dev.js -w",
     "test": "jest"
   },

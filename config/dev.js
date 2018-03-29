@@ -8,7 +8,7 @@ import resolve from 'rollup-plugin-node-resolve'
 export default {
   input: 'src/index.js',
   output: {
-    file: 'build/index.js',
+    file: 'lib/index.js',
     format: 'es',
   },
   external: ['ajv', 'final-form', 'final-form-arrays', 'react', 'react-dom', 'react-final-form', 'react-final-form-arrays'],
