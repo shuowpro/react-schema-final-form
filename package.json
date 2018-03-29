@@ -65,7 +65,7 @@
     "prebuild:dev": "rimraf build",
     "build:dev": "rollup -c config/dev.js -w",
     "test": "jest",
-    "release": "np --no-publish"
+    "release": "np --no-publish --yolo"
   },
   "peerDependencies": {
     "ajv": "^6.3.0",
