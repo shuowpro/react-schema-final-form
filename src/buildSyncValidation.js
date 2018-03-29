@@ -1,4 +1,5 @@
 import _set from 'lodash.set';
+import Ajv from 'ajv';
 
 const setError = (error, schema, res) => {
   // remove the first '.', convert '.foo.bar' to 'foo.bar'
@@ -32,7 +33,11 @@ const findTypeInSchema = (schema, dataPath) => {
 };
 
 
-const buildSyncValidation = (schema, ajv) => {
+const buildSyncValidation = (schema) => {
+  const ajv = new Ajv({
+    allErrors: true,
+    errorDataPath: 'property',
+  });
   const validate = ajv.compile(schema);
   return values => {
     const valid = validate(values);

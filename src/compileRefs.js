@@ -8,10 +8,10 @@ export const resolveRef = (uri, schema) => {
   return tip;
 }
 
-export const compileRefs = ({
+export const compileRefs = (
   schema = {},
   root = null,
-}) => {
+) => {
   if (!root) {
     root = schema;
   }

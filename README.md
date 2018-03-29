@@ -1,4 +1,4 @@
-# React-Schema-Final-Form
+# React-Schema-Final-Form [![Build Status](https://travis-ci.org/leuction/react-schema-final-form.svg?branch=master)](https://travis-ci.org/leuction/react-schema-final-form/)
 
 
 > A simple library to build a form based on react-final-form and JSON Schema.
