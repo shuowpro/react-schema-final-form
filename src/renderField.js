@@ -28,7 +28,7 @@ const renderField = ({
   });
 
   if (!theme[widget]) {
-    throw new Error('We do not support this widget right now, are you forget to import the widget into the theme?');
+    throw new Error(`We do not support the widget "${widget}" right now, are you forget to import the widget into the theme?`);
   }
 
   return React.createElement(theme[widget], {
