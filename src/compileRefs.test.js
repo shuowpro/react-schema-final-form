@@ -59,8 +59,11 @@ describe('compileRefs', () => {
         type: 'string'
       }
     });
-    expect(compileRefs({
-      wrapWith: '/properties/name',
-    })).toEqual({});
   });
+  it('should resolve empty wrapWith', () => {
+    expect(compileRefs({
+      schema: {},
+      wrapWith: '/properties/foo',
+    })).toEqual({});
+  })
 });
