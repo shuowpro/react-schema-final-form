@@ -37,8 +37,9 @@ const compileRefs = ({
   schema = {},
   wrapWith = '',
 }) => {
+
   const compiled = compileSchema(schema, wrapWith, schema);
-  const originSchema = wrapWith.split('/').filter(v => v !== '').reduce((obj, key) => obj[key], compiled);
+  const originSchema = wrapWith.split('/').filter(v => v !== '').reduce((obj, key) => obj[key] || {}, compiled);
   delete originSchema.definitions;
   return compiled;
 }
