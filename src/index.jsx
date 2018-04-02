@@ -1,6 +1,6 @@
 import React from 'react';
-import compileRefs from './compileRefs';
 import renderField from './renderField';
+export { default as compileRefs } from './compileRefs';
 export { default as renderField } from './renderField.js';
 export { default as renderObjectProperties } from './renderObjectProperties';
 export { default as buildSyncValidation } from './buildSyncValidation';
@@ -17,7 +17,7 @@ const renderSchema = ({
     throw new Error('We only support the outermost layer of JSON to be object');
   }
   return renderField({
-    schema: compileRefs(schema),
+    schema,
     theme,
     mutators,
   })
