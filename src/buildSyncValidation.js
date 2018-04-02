@@ -38,13 +38,12 @@ const buildSyncValidation = (schema) => {
     allErrors: true,
     errorDataPath: 'property',
   });
-  const validate = ajv.compile(schema);
   return values => {
-    const valid = validate(values);
+    const valid = ajv.validate(schema, values);
     if (valid) {
       return {};
     }
-    const errors = validate.errors.reduce((res, error) => setError(error, schema, res), {});
+    const errors = ajv.errors.reduce((res, error) => setError(error, schema, res), {});
     return errors;
   }
 }
