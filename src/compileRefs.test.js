@@ -35,8 +35,8 @@ describe('compileRefs', () => {
         }
       }
     }
-    expect(compileRefs({schema})).toHaveProperty('properties.billing_address.type', 'object');
-    expect(compileRefs({schema})).toHaveProperty('properties.billing_address.properties', {
+    expect(compileRefs(schema)).toHaveProperty('properties.billing_address.type', 'object');
+    expect(compileRefs(schema)).toHaveProperty('properties.billing_address.properties', {
       street_address: {
         type: 'string'
       },
@@ -47,8 +47,8 @@ describe('compileRefs', () => {
         type: 'string'
       }
     });
-    expect(compileRefs({schema})).toHaveProperty('properties.shipping_address.type', 'object');
-    expect(compileRefs({schema})).toHaveProperty('properties.shipping_address.properties', {
+    expect(compileRefs(schema)).toHaveProperty('properties.shipping_address.type', 'object');
+    expect(compileRefs(schema)).toHaveProperty('properties.shipping_address.properties', {
       street_address: {
         type: 'string'
       },
@@ -61,9 +61,6 @@ describe('compileRefs', () => {
     });
   });
   it('should resolve empty wrapWith', () => {
-    expect(compileRefs({
-      schema: {},
-      wrapWith: '/properties/foo',
-    })).toEqual({});
+    expect(compileRefs({})).toEqual({});
   })
 });
