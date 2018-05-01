@@ -12,9 +12,9 @@ export const isReuqired = ({
 }
 
 const renderObjectProperties = ({
-  schema = {},
-  theme = {},
-  mutators = {},
+  schema,
+  rootSchema,
+  theme,
   fieldName = '',
 }) => Object.keys(schema.properties)
   .map(propertyName => ({
@@ -29,13 +29,13 @@ const renderObjectProperties = ({
   })
   .map(item => renderField({
     schema: schema.properties[item.propertyName],
-    fieldName: fieldName ? `${fieldName}.${item.propertyName}` : item.propertyName,
+    rootSchema: rootSchema,
     theme,
+    fieldName: fieldName ? `${fieldName}.${item.propertyName}` : item.propertyName,
     required: isReuqired({ 
       schema,
       fieldName: item.propertyName,
     }),
-    mutators,
   }));
 
 export default renderObjectProperties;
