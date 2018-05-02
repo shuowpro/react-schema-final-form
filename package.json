@@ -1,7 +1,7 @@
 {
   "name": "react-schema-final-form",
   "main": "./lib/index.js",
-  "version": "0.0.16",
+  "version": "0.1.1",
   "title": "react-schema-final-form",
   "description": "A simple library to build a form based on react-final-form and JSON Schema.",
   "keywords": [
@@ -23,6 +23,7 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
+    "lodash.get": "^4.4.2",
     "lodash.set": "^4.3.2"
   },
   "devDependencies": {

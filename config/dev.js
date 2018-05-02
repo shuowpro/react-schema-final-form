@@ -6,7 +6,7 @@ import replace from 'rollup-plugin-replace'
 import resolve from 'rollup-plugin-node-resolve'
 
 export default {
-  input: 'src/index.jsx',
+  input: 'src/index.js',
   output: {
     file: 'lib/index.js',
     format: 'es',

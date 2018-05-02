@@ -1,9 +1,8 @@
-import React from 'react';
+import * as React from 'react';
+import _get from 'lodash.get';
 
-const getWidget = ({
-  schema = {},
-  theme = {},
-}) => {
+// TODO: support oneOf, anyOf, allOf,
+const getWidget = (schema, theme) => {
   if (schema.widget) {
     return schema.widget;
   } else if (schema.hasOwnProperty('enum')) {
@@ -15,17 +14,44 @@ const getWidget = ({
   }
 }
 
+const getRef = (ref, rootSchema) => {
+  const path = ref.replace("#/", "").replace("/", ".");
+  return _get(rootSchema, path);
+}
+
+/**
+ * 
+ * @param {object} schema The current schema that we used to render the widget 
+ * @param {object} rootSchema The root schema that we can use to parse the $ref
+ * @param {object} theme The theme which contains widgets, so that we can render schema based on it.
+ * @param {string} fieldName The fieldName which will be used at <Field name={fieldName} />, very import.
+ * @param {bool} required Whether the widget is required based on the required field in the object.
+ */
 const renderField = ({
-  schema = {},
+  schema,
+  rootSchema,
+  theme,
   fieldName = '',
-  theme = {},
   required = false,
-  mutators = {},
+  ...rest,
 }) => {
-  const widget = getWidget({
-    schema,
-    theme,
-  });
+  if (schema.$ref) {
+    const { $ref, ...others } = schema;
+    const newSchema = getRef($ref, rootSchema);
+    if (!newSchema) throw new Error("Cannot resolve the $ref: " + schema.$ref);
+    return renderField({
+      schema: {
+        ...others,
+        ...newSchema
+      },
+      rootSchema,
+      theme,
+      fieldName,
+      required,
+    })
+  }
+
+  const widget = getWidget(schema, theme);
 
   if (!theme[widget]) {
     throw new Error(`We do not support the widget "${widget}" right now, are you forget to import the widget into the theme?`);
@@ -37,7 +63,7 @@ const renderField = ({
     required,
     schema,
     theme,
-    mutators,
+    ...rest
   })
 }
 
