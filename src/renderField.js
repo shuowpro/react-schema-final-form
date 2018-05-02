@@ -1,7 +1,7 @@
 import * as React from 'react';
 import _get from 'lodash.get';
 
-// TODO: support oneOf, anyOf, allOf, not,
+// TODO: support oneOf, anyOf, allOf,
 const getWidget = (schema, theme) => {
   if (schema.widget) {
     return schema.widget;
