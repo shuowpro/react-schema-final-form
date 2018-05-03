@@ -1,13 +1,17 @@
 {
   "name": "react-schema-final-form",
   "main": "./lib/index.js",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "title": "react-schema-final-form",
   "description": "A simple library to build a form based on react-final-form and JSON Schema.",
   "keywords": [
     "JSON Schema",
     "React Final Form",
     "React"
+  ],
+  "files": [
+    "lib",
+    "src"
   ],
   "author": {
     "name": "Shuo Wang",
