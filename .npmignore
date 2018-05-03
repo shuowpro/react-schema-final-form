@@ -1,0 +1,12 @@
+# all the crap that's not neccessary for the npm module to work
+node_modules
+src
+test
+.babelrc
+.eslintignore
+.eslintrc
+.editorconfig
+.gitignore
+.npmignore
+.travis.yml
+config
