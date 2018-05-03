@@ -65,8 +65,7 @@
     "prebuild": "rimraf lib",
     "build": "rollup -c config/prod.js",
     "prebuild:dev": "rimraf lib",
-    "build:dev": "rollup -c config/dev.js -w",
-    "test": "jest"
+    "build:dev": "rollup -c config/dev.js -w"
   },
   "peerDependencies": {
     "ajv": "^6.3.0",
