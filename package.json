@@ -72,8 +72,7 @@
     "prebuild:dev": "rimraf lib",
     "build:dev": "rollup -c config/dev.js -w",
     "prepare": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "np": "np"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "peerDependencies": {
     "ajv": "^6.3.0",

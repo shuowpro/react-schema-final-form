@@ -31,12 +31,8 @@ class ReactFinalSchemaForm extends React.Component {
   }
 
   getChildContext() {
-    const { schema, theme } = this.props;
     return {
-      reactFinalSchemaForm: {
-        schema,
-        theme,
-      },
+      reactFinalSchemaForm: this.props,
     };
   }
 
