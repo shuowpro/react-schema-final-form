@@ -20,7 +20,6 @@ const getRef = (ref, rootSchema) => {
 }
 
 /**
- * 
  * @param {object} schema The current schema that we used to render the widget 
  * @param {object} rootSchema The root schema that we can use to parse the $ref
  * @param {object} theme The theme which contains widgets, so that we can render schema based on it.

@@ -2,6 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import buildSyncValidation from './buildSyncValidation';
 import renderField from './renderField';
+import SchemaContext from './SchemaContext';
 
 class ReactFinalSchemaForm extends React.Component {
   static propTypes = {
@@ -26,15 +27,6 @@ class ReactFinalSchemaForm extends React.Component {
      */
     theme: PropTypes.object.isRequired,
   }
-  static childContextTypes = {
-    reactFinalSchemaForm: PropTypes.object,
-  }
-
-  getChildContext() {
-    return {
-      reactFinalSchemaForm: this.props,
-    };
-  }
 
   render() {
     const { children, schema, theme } = this.props;
@@ -50,10 +42,20 @@ class ReactFinalSchemaForm extends React.Component {
       return null;
     }
     const validate = buildSyncValidation(schema);
-    return children({
-      RenderedFields,
-      validate,
-    })
+    // rename the schema to the rootSchema
+    const {
+      schema: rootSchema,
+      ...rest,
+    } = this.props;
+    const contextValue = { ...rest, rootSchema };
+    return (
+      <SchemaContext.Provider value={contextValue}>
+        {children({
+          RenderedFields,
+          validate,
+        })}
+      </SchemaContext.Provider>
+    );
   }
 }
 
