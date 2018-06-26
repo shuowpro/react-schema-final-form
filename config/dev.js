@@ -14,10 +14,8 @@ export default {
   external: ['ajv', 'final-form', 'final-form-arrays', 'react', 'react-dom', 'react-final-form', 'react-final-form-arrays'],
   plugins: [
     babel({
-      babelrc: false,
       exclude: 'node_modules/**',
-      presets: [ [ 'es2015', { modules: false } ], 'stage-0', 'react' ],
-      plugins: [ 'external-helpers' ]
+      plugins: [ 'external-helpers' ],
     }),
     commonjs({
       include: /node_modules/

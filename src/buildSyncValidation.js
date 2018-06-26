@@ -1,7 +1,7 @@
 import _set from 'lodash.set';
 import Ajv from 'ajv';
 
-const setError = (error, schema, res) => {
+export const setError = (error, schema, res) => {
   // remove the first '.', convert '.foo.bar' to 'foo.bar'
   const dataPath = error.dataPath.charAt(0) === '.' ? error.dataPath.slice(1) : error.dataPath;
   _set(res, dataPath, error.message);

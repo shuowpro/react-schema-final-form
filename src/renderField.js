@@ -2,7 +2,7 @@ import * as React from 'react';
 import _get from 'lodash.get';
 
 // TODO: support oneOf, anyOf, allOf,
-const getWidget = (schema, theme) => {
+export const getWidget = (schema, theme) => {
   if (schema.widget) {
     return schema.widget;
   } else if (schema.hasOwnProperty('enum')) {
@@ -14,7 +14,7 @@ const getWidget = (schema, theme) => {
   }
 }
 
-const getRef = (ref, rootSchema) => {
+export const getRef = (ref, rootSchema) => {
   const path = ref.replace("#/", "").replace("/", ".");
   return _get(rootSchema, path);
 }

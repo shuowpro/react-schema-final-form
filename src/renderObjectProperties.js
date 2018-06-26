@@ -1,9 +1,6 @@
 import renderField from './renderField';
 
-export const isReuqired = ({
-  schema = {},
-  fieldName = '',
-}) => {
+export const isReuqired = (schema = {}, fieldName = '') => {
   // if for this object, there is no required property. that means this property is not required
   if (!schema.required) {
     return false;
@@ -32,10 +29,7 @@ const renderObjectProperties = ({
     rootSchema: rootSchema,
     theme,
     fieldName: fieldName ? `${fieldName}.${item.propertyName}` : item.propertyName,
-    required: isReuqired({ 
-      schema,
-      fieldName: item.propertyName,
-    }),
+    required: isReuqired(schema, item.propertyName),
   }));
 
 export default renderObjectProperties;
