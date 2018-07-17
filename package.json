@@ -4,6 +4,7 @@
   "version": "0.2.0",
   "title": "react-schema-final-form",
   "description": "A simple library to build a form based on react-final-form and JSON Schema.",
+  "homepage": "https://leuction.github.io/react-schema-final-form",
   "keywords": [
     "JSON Schema",
     "React Final Form",
@@ -49,6 +50,7 @@
     "eslint-plugin-react": "^7.7.0",
     "final-form": "^4.4.0",
     "final-form-arrays": "^1.0.4",
+    "gh-pages": "^1.2.0",
     "jest": "^22.4.2",
     "np": "^2.20.1",
     "react": "^16.3.0",
@@ -73,7 +75,8 @@
     "build:dev": "rollup -c config/dev.js -w",
     "prepare": "npm run build",
     "test": "jest --coverage",
-    "test:watch": "jest --watch --coverage"
+    "test:watch": "jest --watch --coverage",
+    "deploy": "gh-pages -d docs"
   },
   "peerDependencies": {
     "ajv": "^6.3.0",

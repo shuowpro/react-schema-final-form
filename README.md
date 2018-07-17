@@ -2,6 +2,8 @@
 
 > A simple hoc to build a form based on react-final-form and JSON Schema. This library is highly inspried by [Liform-react](https://github.com/Limenius/liform-react/)
 
+You can try with [Live Playground](http://leuction.com/react-schema-final-form/)
+
 ## Installation
 
 Via **npm** into a fresh project:

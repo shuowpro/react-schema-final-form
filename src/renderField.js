@@ -47,6 +47,7 @@ const renderField = ({
       theme,
       fieldName,
       required,
+      ...rest
     })
   }
 

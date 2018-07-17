@@ -1,0 +1,52 @@
+{
+  "name": "demo",
+  "version": "0.0.1",
+  "description": "The demo of the react-schema-final-form",
+  "main": "index.js",
+  "author": "leuction",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "dev": "webpack-dev-server --config ./webpack.config.js --mode development --hot",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.52",
+    "@babel/core": "^7.0.0-beta.52",
+    "@babel/preset-env": "^7.0.0-beta.52",
+    "@babel/preset-react": "^7.0.0-beta.52",
+    "@babel/preset-stage-0": "^7.0.0-beta.52",
+    "babel-loader": "^8.0.0-beta.4",
+    "css-loader": "^1.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "monaco-editor-webpack-plugin": "^1.4.0",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "@material-ui/core": "^1.3.1",
+    "@material-ui/icons": "^1.1.0",
+    "ajv": "^6.5.2",
+    "codemirror": "^5.39.0",
+    "final-form": "^4.8.3",
+    "final-form-arrays": "^1.0.4",
+    "gh-pages": "^1.2.0",
+    "lodash": "^4.17.10",
+    "normalize.css": "^8.0.0",
+    "polished": "^1.9.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-final-form": "^3.6.4",
+    "react-final-form-arrays": "^1.0.6",
+    "react-monaco-editor": "^0.17.2",
+    "react-schema-final-form": "^0.2.0",
+    "react-schema-final-form-material-ui": "^0.4.2",
+    "react-schema-final-form-smooth-ui": "^0.0.1",
+    "smooth-ui": "^4.3.0",
+    "styled-components": "^3.3.3",
+    "styled-is": "^1.1.3"
+  }
+}

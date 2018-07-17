@@ -7,3 +7,5 @@ test
 .editorconfig
 .travis.yml
 config
+demo
+docs
