@@ -7,7 +7,7 @@ import formThemes from '../formThemes'
 export const HeaderWrapper = styled.header`
   position: relative;
   width: 100%;
-  padding: 0 20rem;
+  padding: 0 12.5rem;
   background: ${props => props.theme.color.white}
   transition: all 0.24s ease;
   grid-area: header;
@@ -21,7 +21,7 @@ export const Themes = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 20rem;
+  max-width: 12.5rem;
   width: 100%;
 `;
 

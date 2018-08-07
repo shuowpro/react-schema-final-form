@@ -6,7 +6,7 @@ import defaultSchemas from '../defaultSchemas';
 export const SchemasWrapper = styled.header`
   position: relative;
   width: 100%;
-  padding: 0 20rem;
+  padding: 0 12.5rem;
   background: ${props => props.theme.color.white}
   transition: all 0.24s ease;
   grid-area: schemas;

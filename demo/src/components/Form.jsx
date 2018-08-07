@@ -6,6 +6,8 @@ import arrayMutators from 'final-form-arrays';
 import MuiButton from '@material-ui/core/Button';
 import MuiPaper from '@material-ui/core/Paper';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { defaultTheme } from 'smooth-ui'
+import { ThemeProvider } from 'styled-components'
 import ErrorBoundary from './ErrorBoundary';
 
 const muiTheme = createMuiTheme({
@@ -55,14 +57,15 @@ class Form extends Component {
       <FormWrapper>
         <ErrorBoundary key={getRandomKey()}>
           <MuiThemeProvider theme={muiTheme}>
-            <Paper>
-              <SchemaForm
-                schema={schema}
-                theme={theme}
-                {...rest}
-              >
-                {({ RenderedFields, validate }) => (
-                  <FinalForm
+            <ThemeProvider theme={defaultTheme}>
+              <Paper>
+                <SchemaForm
+                  schema={schema}
+                  theme={theme}
+                  {...rest}
+                  >
+                  {({ RenderedFields, validate }) => (
+                    <FinalForm
                     initialValues={initialValues}
                     onSubmit={values => window.alert(JSON.stringify(values, 0, 2))}
                     validate={validate}
@@ -70,19 +73,20 @@ class Form extends Component {
                       ...arrayMutators
                     }}
                     validateOnBlur
-                  >
-                    {({ handleSubmit }) => (
-                      <form onSubmit={handleSubmit}>
-                        <RenderedFields />
-                        <Button type="submit">
-                          Submit!
-                        </Button>
-                      </form>
-                    )}
-                  </FinalForm>
-                )}
-              </SchemaForm>
-            </Paper>
+                    >
+                      {({ handleSubmit }) => (
+                        <form onSubmit={handleSubmit}>
+                          <RenderedFields />
+                          <Button type="submit">
+                            Submit!
+                          </Button>
+                        </form>
+                      )}
+                    </FinalForm>
+                  )}
+                </SchemaForm>
+              </Paper>
+            </ThemeProvider>
           </MuiThemeProvider>
         </ErrorBoundary>
       </FormWrapper>

@@ -12,7 +12,7 @@ const SiteWrapper = styled.div`
     'header'
     'schemas'
     'main';
-  grid-template-rows: 5rem 5rem 1fr;
+  grid-template-rows: 3rem 3rem 1fr;
 `;
 
 export default SiteWrapper;
